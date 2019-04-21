@@ -13,10 +13,14 @@ fun main(args: Array<String>) {
 }
 
 @Component
-class Main(val artistRepository: ArtistRepository) {
+class Main(
+        val artistRepository: ArtistRepository,
+        val celebRepository: CelebRepository
+) {
 
     @PostConstruct
     fun init() {
         artistRepository.save(Artist(name = "David Bowie"))
+        celebRepository.save(Celeb(name = "Tom Cruise"))
     }
 }
